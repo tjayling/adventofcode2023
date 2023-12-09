@@ -3,10 +3,10 @@ package code.day1;
 import java.util.List;
 import code.utils.FileReader;
 
-public class Main {
-  public static void main(String[] args) {
-    FileReader fileReader = new FileReader();
-    List<String> inputs = fileReader.readFile("/Users/aylint1/IdeaProjects/me/advent of code 23/src/resources/day1/input.txt");
+public class Part1 {
+  private static final FileReader fileReader = new FileReader();
+  private static final List<String> inputs = fileReader.readFile("/Users/aylint1/IdeaProjects/me/advent of code 23/src/resources/day1/input.txt");
+  public static void run() {
 
     int result = 0;
 
@@ -21,9 +21,13 @@ public class Main {
         }
       }
 
+      System.out.println("Input: " + input);
+      System.out.println("First digit: " + firstDigit);
+      System.out.println("Last digit: " + lastDigit);
+
       String stringNum = String.valueOf(firstDigit) + lastDigit;
       result += Integer.parseInt(stringNum);
     }
-    System.out.println("\n\nResult: " + result);
+    System.out.println("\nResult: " + result);
   }
 }

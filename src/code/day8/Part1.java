@@ -5,17 +5,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Main {
-  public static void main(String[] args) {
-    FileReader fileReader = new FileReader();
-    List<String> inputs = fileReader.readFile("/Users/aylint1/IdeaProjects/me/advent of code 23/src/resources/day3/input.txt");
+public class Part1 {
+  private static final FileReader fileReader = new FileReader();
+  private static final List<String> inputs = fileReader.readFile("/Users/aylint1/IdeaProjects/me/advent of code 23/src/resources/day3/input.txt");
+
+  public static void run() {
 
     String instructionSet = inputs.get(0);
 
     inputs.removeFirst();
     inputs.removeFirst();
 
-    Map<String, Instruction> instructionMap = getInstructions(inputs);
+    Map<String, Instruction> instructionMap = getInstructions();
 
     Instruction currentInstruction = instructionMap.get("AAA");
     int count = 0;
@@ -34,7 +35,7 @@ public class Main {
     }
   }
 
-  private static Map<String, Instruction> getInstructions(List<String> inputs) {
+  private static Map<String, Instruction> getInstructions() {
     Map<String, Instruction> result = new HashMap<>();
 
     for (String input : inputs) {
